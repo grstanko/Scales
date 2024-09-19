@@ -23,7 +23,7 @@ void draw() {
 
 	lights();
 
-	translate(height/2, width/2, 0);
+	translate(height/2, width/2, -50);
 	rotateX(radians(rotX));
 	rotateY(radians(rotY));
 	rotateZ(radians(rotZ));
@@ -38,7 +38,10 @@ void draw() {
 
 	int offset = 0;
 
-	for (int y = -200; y < 200; y += 20) {
+	scale(2.0);
+
+	translate(-100, -100, 0);
+	for (int y = 0; y < 200; y += 20) {
 		offset = (~offset) & 0b1;
 		translate(20 , 0, 0);
 		if (offset == 0) {
@@ -46,11 +49,11 @@ void draw() {
 		} else {
 			translate(0, -10, 0);
 		}
-		for (int x = -2--; x < 200; x += 20) {
+		for (int x = 0; x < 200; x += 20) {
 			translate(0, 20, 0);
 			scale(x,y);
 		}
-		translate(0, -400, 0);
+		translate(0, -200, 0);
 	}
 
 	popMatrix();
@@ -75,7 +78,7 @@ void scale(int x, int y) {
 	sphere(5);
 	pushMatrix();
 
-	rotateX(radians((float)(Math.random()))*20);
+	rotateX(radians((float)(Math.random() - 0.5d))*20);
 
 	rotateY(radians(-15));
 	triangle(0, 0, 20, -10, 20, 10);
