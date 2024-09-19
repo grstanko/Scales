@@ -38,7 +38,7 @@ void draw() {
 
 	int offset = 0;
 
-	for (int y = 0; y < 200; y += 20) {
+	for (int y = -200; y < 200; y += 20) {
 		offset = (~offset) & 0b1;
 		translate(20 , 0, 0);
 		if (offset == 0) {
@@ -46,11 +46,11 @@ void draw() {
 		} else {
 			translate(0, -10, 0);
 		}
-		for (int x = 0; x < 200; x += 20) {
+		for (int x = -2--; x < 200; x += 20) {
 			translate(0, 20, 0);
 			scale(x,y);
 		}
-		translate(0, -200, 0);
+		translate(0, -400, 0);
 	}
 
 	popMatrix();
