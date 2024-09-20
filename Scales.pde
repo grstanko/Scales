@@ -69,9 +69,6 @@ void draw() {
 	rotateY(radians(90));
 	fill(#0000FF);
 	box(2.0f,2.0f,1000000);
-
-	switch (r) {
-	}
 }
 
 void scale(int x, int y) {
